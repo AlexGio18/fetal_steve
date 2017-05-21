@@ -39,6 +39,13 @@ class ToursController < ApplicationController
     end
   end
 
+  def destroy
+    @tour = Tour.find(params[:id])
+    flash.notice = "#{@tour.name} is removed!"
+    @tour.destroy
+    redirect_to tours_path
+  end
+
   private
     def tour_params
       params.require(:tour).permit(:name, :location, :date, :tourers, :description, :user_id)
