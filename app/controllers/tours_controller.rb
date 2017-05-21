@@ -19,7 +19,6 @@ class ToursController < ApplicationController
   def create
     @tour = Tour.new(tour_params)
     @tour.user_id = current_user.id
-    binding.pry
     if @tour.save
       flash.notice = "#{@tour.name} Created!"
       redirect_to tours_path(@tour)
