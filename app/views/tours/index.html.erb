@@ -10,3 +10,12 @@
 <% end %>
 
 <h1>Tours</h1>
+<%= link_to "Create Tour", new_tour_path %>
+
+<ul>
+  <% @tours.each do |tour| %>
+  <li>
+    <%= link_to tour.name, tour_path(tour) %>
+  </li>
+  <% end %>
+</ul>
