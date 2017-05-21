@@ -12,6 +12,10 @@ class ToursController < ApplicationController
     @tour = Tour.new
   end
 
+  def edit
+    @tour = Tour.find(params[:id])
+  end
+
   def create
     @tour = Tour.new(tour_params)
     @tour.user_id = current_user.id
@@ -21,6 +25,17 @@ class ToursController < ApplicationController
       redirect_to tours_path(@tour)
     else
       render 'new'
+    end
+  end
+
+  def update
+    @tour = Tour.find(params[:id])
+
+    if @tour.update(tour_params)
+      flash.notice = "#{@tour.name} is Updated!"
+      redirect_to tour_path(@tour)
+    else
+      render 'edit'
     end
   end
 
