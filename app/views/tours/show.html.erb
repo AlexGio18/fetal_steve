@@ -1,6 +1,9 @@
+<%= render partial: 'fetalsteves/header' %>
+
 <h1><%= @tour.name %></h1>
+<%= link_to "Edit this Tour", edit_tour_path %>
 <p><%= @tour.location %></p>
 <p><%= @tour.date %></p>
 <p><%= @tour.tourers %></p>
 <p><%= @tour.description %></p>
-<%= link_to "Edit this Tour", edit_tour_path %>
+<%= link_to "<< Back to Tours", tours_path %>
