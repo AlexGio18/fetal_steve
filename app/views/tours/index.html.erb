@@ -7,6 +7,7 @@
   <% @tours.each do |tour| %>
   <li>
     <%= link_to tour.name, tour_path(tour) %>
+    <%= link_to "delete", tour_path(tour), method: :delete, data: {confirm: "Really delete the article?"} %>
   </li>
   <% end %>
 </ul>
