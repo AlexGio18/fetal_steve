@@ -24,10 +24,6 @@ default: &default
 development:
   adapter: postgresql
   database: fetal-steve_development
-  # database: fetalste_agbook1
-  # username: fetalste_agbook1
-  # password: lenny0125
-  # host: 192.254.234.191
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
