@@ -1,0 +1,11 @@
+<h1>Tours</h1>
+<%= link_to "Create Tour", new_tour_path %>
+
+<ul>
+  <% @tours.each do |tour| %>
+  <li>
+    <%= link_to tour.name, tour_path(tour) %>
+    <%= link_to "delete", tour_path(tour), method: :delete, data: {confirm: "Really delete #{tour.name}?"} %>
+  </li>
+  <% end %>
+</ul>

@@ -1,0 +1,16 @@
+<h1><%= @tour.name %></h1>
+
+<% if @tour.gallery.nil? %>
+<%= link_to "Create Gallery", new_tour_gallery_path(@tour) %>
+<% else %>
+<h3><%= @tour.gallery.pictures.size %> Pictures</h3> 
+<%= link_to "View Gallery", tour_gallery_path(@tour) %>
+<% end %>
+
+<%= link_to "Edit this Tour", edit_tour_path %>
+<%= link_to "delete", tour_path(@tour), method: :delete, data: {confirm: "Really delete #{@tour.name}?"} %>
+<p><%= @tour.location %></p>
+<p><%= @tour.date %></p>
+<p><%= @tour.tourers %></p>
+<p><%= @tour.description %></p>
+<%= link_to "<< Back to Tours", tours_path %>

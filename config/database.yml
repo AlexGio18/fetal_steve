@@ -22,12 +22,8 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
-  adapter: mysql2
-  database: fetalste_agbook1
-  username: fetalste_agbook1
-  password: lenny0125
-  host: 192.254.234.191
-
+  adapter: postgresql
+  database: fetal-steve_development
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
