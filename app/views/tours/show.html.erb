@@ -3,7 +3,17 @@
 <% if @tour.gallery.nil? %>
 <%= link_to "Create Gallery", new_tour_gallery_path(@tour) %>
 <% else %>
-<h3><%= @tour.gallery.pictures.size %> Pictures</h3> 
+<h4><%= @tour.gallery.pictures.size %> Pictures</h4> 
+  <% if @tour.gallery && @tour.gallery.pictures.first != nil %>
+    <ul class="thumbnails files">
+      <li class="span3" id="picture_<%= @tour.gallery.pictures.first.id %>">
+      <div class="thumbnail">
+        <%= image_tag @tour.gallery.pictures.first.image.url %>
+      </div>
+      </li>
+    </ul>
+  <% end %>
+  <br/>
 <%= link_to "View Gallery", tour_gallery_path(@tour) %>
 <% end %>
 
