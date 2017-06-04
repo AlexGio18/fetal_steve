@@ -13,6 +13,7 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @post = Post.find(params[:id])
   end
 
   def create
@@ -27,6 +28,14 @@ class PostsController < ApplicationController
   end
 
   def update
+    @post = Post.find(params[:id])
+
+    if @post.update(post_params)
+      flash[:success] = "#{@post.title} is Updated!"
+      redirect_to placenta_path
+    else
+      render 'posts/edit'
+    end
   end
 
   def destroy

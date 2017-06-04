@@ -38,14 +38,6 @@ ActiveRecord::Schema.define(version: 20170604175725) do
     t.datetime "image_updated_at"
   end
 
-  create_table "placentas", force: :cascade do |t|
-    t.string   "title",       null: false
-    t.text     "description", null: false
-    t.integer  "user_id",     null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
   create_table "posts", force: :cascade do |t|
     t.string   "title",       null: false
     t.text     "description", null: false
@@ -61,9 +53,9 @@ ActiveRecord::Schema.define(version: 20170604175725) do
     t.string   "tourers"
     t.text     "description"
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.boolean  "scholarship"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.boolean  "scholarship", default: false
   end
 
   create_table "users", force: :cascade do |t|
