@@ -1,22 +1,4 @@
 <h1><%= @tour.name %></h1>
-
-<% if @tour.gallery.nil? %>
-<%= link_to "Create Gallery", new_tour_gallery_path(@tour) %>
-<% else %>
-<h4><%= @tour.gallery.pictures.size %> Pictures</h4> 
-  <% if @tour.gallery && @tour.gallery.pictures.first != nil %>
-    <ul class="thumbnails files">
-      <li class="span3" id="picture_<%= @tour.gallery.pictures.first.id %>">
-      <div class="thumbnail">
-        <%= image_tag @tour.gallery.pictures.first.image.url %>
-      </div>
-      </li>
-    </ul>
-  <% end %>
-  <br/>
-<%= link_to "View Gallery", tour_gallery_path(@tour) %>
-<% end %>
-
 <%= link_to "Edit this Tour", edit_tour_path %>
 <%= link_to "delete", tour_path(@tour), method: :delete, data: {confirm: "Really delete #{@tour.name}?"} %>
 <p><%= @tour.location %></p>
@@ -24,3 +6,36 @@
 <p><%= @tour.tourers %></p>
 <p><%= @tour.description %></p>
 <%= link_to "<< Back to Tours", tours_path %>
+
+
+<% if @tour.galleries == [] %>
+<%= link_to "Create Gallery", new_tour_gallery_path(@tour) %>
+<% elsif @tour.galleries.size > 1%>
+<ul class="thumbnails files">
+  <% @tour.galleries.each do |gallery| %>
+    <% if !gallery.pictures.empty? %>
+      <li class="span3" id="picture_<%= gallery.pictures.first.id %>">
+      <div class="thumbnail">
+      <%= image_tag gallery.pictures.first.image.url %>
+      </div>
+      </li>
+    <% end %>
+    <%= link_to "View Gallery", tour_gallery_path(@tour, gallery)%>
+  <% end %>
+</ul>
+<% else %>
+<h4><%= @tour.galleries[0].pictures.size %> Pictures</h4> 
+  <% if @tour.galleries && !@tour.galleries[0].pictures.empty? %>
+    <ul class="thumbnails files">
+      <li class="span3" id="picture_<%= @tour.galleries[0].pictures.first.id %>">
+      <div class="thumbnail">
+        <%= image_tag @tour.galleries[0].pictures.first.image.url %>
+      </div>
+      </li>
+    </ul>
+  <% end %>
+  <br/>
+<%= link_to "View Gallery", tour_gallery_path(@tour, @tour.galleries[0]) %>
+<% end %>
+
+

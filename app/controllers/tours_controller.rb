@@ -1,7 +1,7 @@
 class ToursController < ApplicationController
   
   def index
-    @tours = Tour.order("id DESC").all
+    @tours = Tour.order("id DESC").select{ |tour| tour.scholarship == false }
   end
 
   def show
