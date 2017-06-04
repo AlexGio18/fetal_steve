@@ -1,7 +1,7 @@
 class ToursController < ApplicationController
   
   def index
-    @tours = Tour.all
+    @tours = Tour.order("id DESC").all
   end
 
   def show
@@ -20,7 +20,7 @@ class ToursController < ApplicationController
     @tour = Tour.new(tour_params)
     @tour.user_id = current_user.id
     if @tour.save
-      flash.notice = "#{@tour.name} Created!"
+      flash[:success] = "#{@tour.name} Created!"
       redirect_to tours_path(@tour)
     else
       render 'new'
@@ -31,7 +31,7 @@ class ToursController < ApplicationController
     @tour = Tour.find(params[:id])
 
     if @tour.update(tour_params)
-      flash.notice = "#{@tour.name} is Updated!"
+      flash[:success] = "#{@tour.name} is Updated!"
       redirect_to tour_path(@tour)
     else
       render 'edit'
@@ -40,7 +40,7 @@ class ToursController < ApplicationController
 
   def destroy
     @tour = Tour.find(params[:id])
-    flash.notice = "#{@tour.name} is removed!"
+    flash[:success] = "#{@tour.name} is removed!"
     @tour.destroy
     redirect_to tours_path
   end

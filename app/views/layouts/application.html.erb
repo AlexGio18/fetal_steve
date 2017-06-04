@@ -8,17 +8,28 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="container">
+  <body>
+  <div class="container-fluid">
   <h1> FetalSteve.com </h1>
     <%= link_to "Home", root_path %>
     <%= link_to "Story",  story_path %>
     <%= link_to "Tours", tours_path %>
-
+    <a href="http://www.fetalsteve.com/wordpress/">Placenta</a>
+    <a href="http://www.fetalsteve.com/cgi-bin/store/cpshop.cgi">Store</a>
     <% if user_signed_in? %>
     <%= link_to("Log Out", destroy_user_session_path, :method => :delete) %>
     <% else %>
     <%= link_to "Sign In", new_user_session_path %>
     <% end %>
+
+      <% flash.each do |k, v| %>
+      <div class="alert alert-<%= k %>"><%= v %></div>
+      <% end %>
+
+  </div>
+    
+    <div class="container">
     <%= yield %>
+    </div>
   </body>
 </html>
