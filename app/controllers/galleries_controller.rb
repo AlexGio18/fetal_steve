@@ -5,7 +5,7 @@ class GalleriesController < ApplicationController
 
   def show
     @tour = Tour.find(params[:tour_id])
-    @gallery = Gallery.find(@tour.gallery.id)
+    @gallery = Gallery.find(params[:id])
     @pictures = @gallery.pictures
   end
 
@@ -25,7 +25,6 @@ class GalleriesController < ApplicationController
 
     respond_to do |format|
       if @gallery.save
-        
         if params[:images]
           # The magic is here ;)
           params[:images].each { |image|
@@ -34,7 +33,7 @@ class GalleriesController < ApplicationController
 
         end
 
-        format.html { redirect_to tour_path(@gallery.tour_id), notice: 'Gallery was successfully created.' }
+        format.html { redirect_to tour_path(@gallery.tour_id), notice: "Gallery '#{@gallery.name}' was successfully created." }
         format.json { render json: @gallery, status: :created, location: @gallery }
       else
         format.html { render action: "new" }
@@ -55,7 +54,7 @@ class GalleriesController < ApplicationController
             @gallery.pictures.create(image: image)
           }
         end
-        format.html { redirect_to tour_path(@tour), notice: 'Gallery was successfully updated.' }
+        format.html { redirect_to tour_path(@tour), notice: "Gallery '#{@gallery.name}' was successfully updated." }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

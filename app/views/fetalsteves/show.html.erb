@@ -1,0 +1,7 @@
+<h3>Odds and Ends...</h3>
+<p>Where all the other pictures go.</p>
+<ul>
+  <% @tours.each do |tour| %>
+  <li><%= link_to "#{tour.name}", tour_path(tour.id) %></li>
+  <% end %>
+</ul>

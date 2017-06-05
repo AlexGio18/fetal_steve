@@ -1,0 +1,7 @@
+<h3>Scholarship Entries</h3>
+<p>Entries for the 2008 Fetal Steve Dare to Dream Scholarship</p>
+<ul>
+  <% @tours.each do |tour| %>
+  <li><%= link_to "#{tour.name}", tour_path(tour) %></li>
+  <% end %>
+</ul>
