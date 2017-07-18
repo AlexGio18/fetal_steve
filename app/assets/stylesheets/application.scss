@@ -12,5 +12,8 @@
  *
  *= require_tree .
  *= require_self
- *= require jquery.Jcrop
+ *= require_styles
  */
+ 
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
