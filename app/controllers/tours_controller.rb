@@ -18,11 +18,15 @@ class ToursController < ApplicationController
 
   def create
     @tour = Tour.new(tour_params)
-    @tour.user_id = current_user.id
-    if @tour.save
-      flash[:success] = "#{@tour.name} Created!"
-      redirect_to tours_path(@tour)
-    else
+    if current_user
+      @tour.user_id = current_user.id
+      if @tour.save
+        flash[:success] = "#{@tour.name} Created!"
+        redirect_to tours_path(@tour)
+      else
+        render 'new'
+      end
+    else 
       render 'new'
     end
   end

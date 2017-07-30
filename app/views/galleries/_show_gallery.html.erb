@@ -1,0 +1,36 @@
+<% @tour.galleries.each do |gallery| %>
+  <ul>
+    <% gallery.pictures.each do |pic| %>
+      <div class="col-xs-6 col-sm-4 col-md-3 text-center">
+        <div class="thumbnail-modal" data-toggle="modal" data-target="#<%= pic.id %>">
+          <div class="thumbnail" style="margin: auto;">
+            <div class="thumbnail-crop">
+              <%= image_tag pic.image.url %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="<%= pic.id %>" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-xs-12 text-center">
+                  <%= image_tag pic.image.url%>
+                </div>
+                <div class="col-xs-12 pic-comments">
+                  <h4> Comments </h4>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer text-right">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </ul>
+<% end %>
