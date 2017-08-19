@@ -13,3 +13,51 @@
 .thumbnail-modal {
   padding: 10px 0px;
 }
+
+.modal {
+  background-color: rgba(0,0,0,.3);
+}
+
+.modal-dialog {
+  width: 100% !important;
+}
+
+.modal-dialog > div > i {
+  position: absolute;
+  color: rgba(255,255,255,0.6) !important;
+}
+
+.modal-dialog > div > i:hover {
+  color: rgba(255,255,255,1) !important; 
+  cursor: pointer;
+}
+
+.modal-dialog > div > .glyphicon-remove {
+  top: 0px;
+  right: 25px;
+  font-size: 1.7em !important;
+}
+
+.modal-dialog > div > .glyphicon-chevron-left {
+  top: 40%;
+  font-size: 3em !important;
+  left: 5%
+}
+
+.modal-dialog > div > .glyphicon-chevron-right {
+  top: 40%;
+  font-size: 3em !important;
+  right: 5%;
+}
+
+.img-modal-container {
+  
+}
+
+.img-modal-container > img {
+  box-shadow: 0px 7px 16px rgba(0,0,0,0.4);
+}
+
+.pic-comments > h4 {
+  color: #fff;
+}

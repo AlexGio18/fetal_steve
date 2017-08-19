@@ -12,25 +12,24 @@
       </div>
       <div id="<%= pic.id %>" class="modal fade" role="dialog">
         <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-body">
-              <div class="row">
-                <div class="col-xs-12 text-center">
-                  <%= image_tag pic.image.url%>
-                </div>
-                <div class="col-xs-12 pic-comments">
-                  <h4> Comments </h4>
-                </div>
-              </div>
+          <div>
+            <i class="glyphicon glyphicon-remove" aria-hidden="true" data-dismiss="modal">
+            </i>
+            <i class="glyphicon glyphicon-chevron-left" data-dismiss="modal" aria-hidden="true" data-toggle="modal" data-target="#<%= last_picture(pic.gallery, pic) %>">
+            </i>
+            <i class="glyphicon glyphicon-chevron-right" data-dismiss="modal" aria-hidden="true" data-toggle="modal" data-target="#<%= next_picture(pic.gallery, pic) %>">
+            </i>
+
+            <div class="img-modal-container text-center">
+              <%= image_tag pic.image.url %>
             </div>
-            <div class="modal-footer text-right">
-              <button type="button" class="btn btn-primary" data-dismiss="modal">
-                Close
-              </button>
-            </div>
+          <div class="col-xs-12 pic-comments">
+            <h4> Comments </h4>
+            <hr />
           </div>
         </div>
       </div>
+    </div>
     <% end %>
   </ul>
 <% end %>
