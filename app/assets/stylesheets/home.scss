@@ -2,6 +2,10 @@ body {
   font-family: georgia, serif !important;
 }
 
+body.modal-open { 
+  position: fixed;
+}
+
 p {
   font-size: 1.2em !important;
   color: #333 !important;
