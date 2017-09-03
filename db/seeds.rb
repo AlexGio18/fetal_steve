@@ -7,7 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create(email:'admin@fetalsteve.com', password: 'lenny0125')
-Post.create(title:"test", description:"test", user_id: 1)
 
 Tour.create(name:'Tour #1', location:'Ashland, Ohio', date:'January 26, 2001+1', tourers:'Eric, Marshall, Alan, and Trent', description: "Ashland Fire Department, YMCA, Ashland County Courthouse, Home Hardware, Linder's, Ashland Public Library", user_id: 1, scholarship: false)
 
@@ -118,3 +117,5 @@ Tour.create(name:'Tour #49', location:"Vienna, Austria Munich, Germany", date: "
 Gallery.create(name:"Frame Construction", description:"May 20, 2001+1", tour_id: 39)
 Gallery.create(name:"Mission Accomplished", description:"May 30, 2001+1", tour_id: 39)
 Gallery.create(name:"The Destruction", description:"June 3-4, 2001+1", tour_id: 39)
+
+Post.create(title:"New Site Update", date: "April 11th 2008", description:"Things are going well. I finally got comments enabled on the pictures in the tours. The guestbook is up and running. Things are looking good.", user_id: 1)
