@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   end
   
   resources :posts
-  resources :pictures
+  resources :pictures do
+    resources :comments
+  end
 
   # get '*unmatched_route', to: 'application#raise_not_found'
 end

@@ -26,6 +26,10 @@
   width: 100% !important;
 }
 
+.image-row {
+  position: relative;
+}
+
 .modal-dialog > div > i {
   position: absolute;
   color: rgba(255,255,255,0.6) !important;
@@ -43,7 +47,7 @@
 }
 
 .modal-dialog > div > .glyphicon-chevron-left {
-  top: 40%;
+  top: 50%;
   font-size: 3em !important;
   left: 5%
 }
@@ -63,6 +67,11 @@
   max-width: 80%;
 }
 
-.pic-comments > h4 {
+.pic-comments h4 {
+  padding: 0px 15px;
+  color: #fff;
+}
+
+.pic-comments .control-label {
   color: #fff;
 }

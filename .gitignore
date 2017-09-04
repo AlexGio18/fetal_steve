@@ -19,3 +19,5 @@
 /config/local_env.yml
 
 /db/seeds.rb
+
+.env.recaptcha
