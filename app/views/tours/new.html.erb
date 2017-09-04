@@ -1,3 +1,13 @@
-<h1>Log A Tour!</h1>
+<div class="row">
+  <div class="col-xs-12">
+    <%= link_to tours_path do %>
+    <i class="glyphicon glyphicon-log-out back-icon" title="Back To Tours"></i>
+    <% end %>
+    <h1 class="text-center">Create a New Tour</h1>
+
+  </div>
+</div>
+
+<hr />
 
 <%= render partial: 'form' %>

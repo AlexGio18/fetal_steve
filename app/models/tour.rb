@@ -20,4 +20,5 @@ class Tour < ApplicationRecord
     sum = 0
     self.galleries.each{ |gallery| sum += gallery.pictures.reduce(:+)  }
   end
+
 end

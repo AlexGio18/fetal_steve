@@ -1,0 +1,77 @@
+.thumbnail {
+  border-radius: 0px !important;
+  width: 200px;
+  padding: 5px;
+  height: auto;
+}
+
+.thumbnail-crop {
+  height: 150px;
+  overflow: hidden;
+}
+
+.thumbnail-crop > img {
+  max-width: 300px;
+}
+
+.thumbnail-modal {
+  padding: 10px 0px;
+}
+
+.modal {
+  background-color: rgba(0,0,0,.3);
+}
+
+.modal-dialog {
+  width: 100% !important;
+}
+
+.image-row {
+  position: relative;
+}
+
+.modal-dialog > div > i {
+  position: absolute;
+  color: rgba(255,255,255,0.6) !important;
+}
+
+.modal-dialog > div > i:hover {
+  color: rgba(255,255,255,1) !important; 
+  cursor: pointer;
+}
+
+.modal-dialog > div > .glyphicon-remove {
+  top: 0px;
+  right: 25px;
+  font-size: 1.7em !important;
+}
+
+.modal-dialog > div > .glyphicon-chevron-left {
+  top: 50%;
+  font-size: 3em !important;
+  left: 5%
+}
+
+.modal-dialog > div > .glyphicon-chevron-right {
+  top: 40%;
+  font-size: 3em !important;
+  right: 5%;
+}
+
+.img-modal-container {
+  
+}
+
+.img-modal-container > img {
+  box-shadow: 0px 7px 16px rgba(0,0,0,0.4);
+  max-width: 80%;
+}
+
+.pic-comments h4 {
+  padding: 0px 15px;
+  color: #fff;
+}
+
+.pic-comments .control-label {
+  color: #fff;
+}

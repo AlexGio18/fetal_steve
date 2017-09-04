@@ -1,5 +1,7 @@
 class GalleriesController < ApplicationController
-
+  
+  include GalleryHelper
+  
   def index
   end
 

@@ -1,0 +1,151 @@
+body {
+  font-family: georgia, serif !important;
+}
+
+body.modal-open { 
+  position: fixed;
+}
+
+p {
+  font-size: 1.2em !important;
+  color: #333 !important;
+}
+
+h2 {
+  margin-bottom: 20px !important;
+}
+
+/* overall layout */
+.no-col-padding {
+  padding: 0px !important;
+}
+
+.body-wrapper {
+  padding-top: 80px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.percent-padding {
+  padding: 0% 10%;
+}
+
+.caption-text {
+  padding: 15px 0px;
+  font-weight: bold;
+}
+
+.back-icon {
+  margin-top: 25px;
+  font-size: 2em;
+  transform: rotate(180deg);
+  float: left;
+}
+
+/* navbar */
+.navbar {
+  border-radius: 0px !important;
+  min-height: 70px !important;
+  font-family: arial, sans-serif;
+}
+
+.navbar-primary {
+  background-color: rgba(234, 59, 106, 1);
+}
+
+.navbar-primary .navbar-brand {
+  color: #fff !important;  
+}
+
+.navbar-primary ul > li > a {
+  color: #fff;  
+}
+
+.navbar-nav > li > a {
+  padding-top: 25px !important;
+  padding-bottom: 25px !important;
+}
+
+.navbar-brand {
+  font-size: 20px !important;
+}
+
+.img-brand {
+  height: 40px;
+  width: auto;
+  border: 2px solid #fff;
+}
+
+.fixed-top {
+  position: fixed !important;
+  width: 100%;
+  z-index: 5;
+}
+
+.drop-shadow {
+  box-shadow: 1px 2px 1px rgba(0,0,0,0.2);
+}
+
+.nav-menu-item a:hover {
+  background-color: rgba(206, 18, 94, 1) !important;
+}
+
+.nav-menu-item a:focus {
+  background-color: rgba(206, 18, 94, 1) !important;
+}
+
+.dropdown-toggle:focus {
+  background-color: rgba(206, 18, 94, 1) !important;
+}
+
+.dropdown a:hover {
+  color: #fff !important;
+}
+
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+  background-color: rgba(206, 18, 94, 1) !important;
+}
+
+.dropdown-primary {
+  background-color: rgba(234, 59, 106, 1) !important;
+}
+
+#welcomeSum {
+  padding-bottom: 20px;
+}
+
+/* Image Styles */
+#steveMap {
+  width: 100%;
+  height: auto;
+  max-width: 516px;
+}
+
+.rand-pictures {
+  background-color: #191919;
+  padding-bottom: 63px;
+  color: white;
+}
+
+.circle-pics {
+  border-radius: 50%;
+  width: 100%;
+  height: auto;
+  max-width: 300px;
+  cursor: pointer;
+}
+
+.circle-pics:hover {
+  transition: .5s;
+  border: 10px solid #e7e7e7;
+}
+
+@media screen and (min-width: 991px) {
+  .format-paragraph {
+    max-width: 600px;
+  }
+
+  #welcomeSum {
+    padding-top: 60px;
+  }
+}

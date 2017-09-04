@@ -1,0 +1,98 @@
+<% @tour.galleries.each do |gallery| %>
+  <ul>
+    <% gallery.pictures.each do |pic| %>
+      <div class="col-xs-6 col-sm-4 col-md-3 text-center">
+        <div class="thumbnail-modal" onclick="showModal('<%= pic.id %>');">
+          <div class="thumbnail" style="margin: auto;">
+            <div class="thumbnail-crop">
+              <%= image_tag pic.image.url %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="<%= pic.id %>" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <div class="image-row row">
+              <i class="glyphicon glyphicon-remove" aria-hidden="true" data-dismiss="modal" onclick="defaultBodyPosition();">
+              </i>
+              <i class="glyphicon glyphicon-chevron-left" data-dismiss="modal" aria-hidden="true" data-toggle="modal" data-target="#<%= last_picture(pic.gallery, pic) %>">
+              </i>
+              <i class="glyphicon glyphicon-chevron-right" aria-hidden="true" onclick="openNextModal('<%= pic.id %>', '<%= next_picture(pic.gallery, pic) %>');" data-toggle="modal">
+              </i>
+            <div class="img-modal-container text-center">
+              <%= image_tag pic.image.url %>
+            </div>
+          </div>
+          <div class="row pic-comments">
+            <div class="col-xs-12">
+              <h4> Comments </h4>
+              <hr />
+            </div>
+            <div class="col-xs-offset-1 col-xs-10 comment-well">
+              <div class="row">
+                <ul class="list-group">
+                  <% pic.comments.each do |comment| %>
+                    <li class="list-group-item"> 
+                        <%= comment.created_at %>
+                        Author: <%= comment.author %> <br />
+                        Body: <%= comment.description %>
+                    </li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+            <div class="col-xs-offset-1 col-xs-10">
+              <%= form_for [pic, @comment], :html => { :class => 'form-horizontal', multipart: true } do |f| %>
+                <%= f.hidden_field :picture_id, :value => pic.id %>
+                <div class="form-group">
+                  <%= f.label :author, :class => 'control-label' %>
+                  <%= f.text_field :author, :class => 'form-control' %>
+                </div>
+                <div class="form-group">
+                  <%= f.label :description, :class => 'control-label' %>
+                  <%= f.text_area :description, :class => 'form-control' %>
+                </div>
+                <div id="recaptcha-container-<%= pic.id %>">
+                </div>
+                <div class="form-actions">
+                  <%= f.submit nil, :class => 'btn btn-primary' %>
+                  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                              tours_path, :class => 'btn btn-warning' %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </ul>
+<% end %>
+<script>
+  function showModal(modal_id) {
+    $('#'+modal_id).modal("show");
+    setTimeout(function() {
+      createRecaptcha(modal_id);
+    }, 100)
+  }
+
+  function createRecaptcha(id) {
+    $('#recaptcha-container-'+id).html('<div class="g-recaptcha " data-sitekey="6LfaLS8UAAAAAMw-lSIX0_EjtXZKTm-qWhpKGbDN"></div>')
+  }
+
+  function openNextModal(current_id, next_id) {
+    $('#'+current_id).modal('hide');
+    $('#'+next_id).modal('show');
+
+    if ((($("#"+next_id).data('bs.modal') || {}).isShown) === true) {
+      $(document.body).css('position', 'fixed');
+      $('.modal').css('overflow-x', 'hidden');
+      $('.modal').css('overflow-y', 'auto');
+    }
+  }; 
+
+    function defaultBodyPosition() {
+      $(document.body).css('position', 'static');
+  };
+  
+</script>

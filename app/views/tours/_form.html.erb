@@ -1,36 +1,46 @@
-<%= form_for(@tour, html: { multipart: true}) do |f| %>
-  <ul>
-  <% @tour.errors.full_messages.each do |error| %>
-    <li><%= error %></li>
-  <% end %>
-  </ul>
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :location %><br />
-    <%= f.text_field :location %>
-  </p>
-  <p>
-    <%= f.label :date %><br />
-    <%= f.text_field :date %><br />
-  </p>
-  <p>
-    <%= f.label :tourers %><br />
-    <%= f.text_field :tourers %><br />
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %><br />
-  </p>
-  <p>
-    <%= f.label :scholarship %><br />
-    <%= f.check_box :scholarship %><br />
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
+<% if @tour.errors.any? %>
+  <div class="flash flash-danger">
+    <ul>
+    <% @tour.errors.full_messages.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+    </ul>
+  </div>
 <% end %>
 
-<%= link_to "<< Back to Tours", tours_path %>
+<%= form_for(@tour, html: { multipart: true}) do |f| %>
+  
+  <div class="col-xs-offset-1 col-xs-10">
+    <div class="form-group">
+      <%= f.label :name, :class => 'control-label' %>
+      <%= f.text_field :name, :class => 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :location, :class => 'control-label' %>
+      <%= f.text_field :location, :class => 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :date, :class => 'control-label' %><br />
+      <%= f.text_field :date, :class => 'form-control' %><br />
+    </div>
+    <div class="form-group">
+      <%= f.label :tourers, :class => 'control-label' %><br />
+      <%= f.text_field :tourers, :class => 'form-control' %><br />
+    </div>
+    <div class="form-group">
+      <%= f.label :description, :class => 'control-label' %><br />
+      <%= f.text_area :description, :class => 'form-control' %><br />
+    </div>
+    <div class="form-group">
+      <%= f.label :scholarship, :class => 'control-label' %><br />
+      <%= f.check_box :scholarship, :class => 'form-control' %><br />
+    </div>
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  tours_path, :class => 'btn btn-warning' %>
+    </div>
+  </p>
+
+  </div>
+<% end %>
