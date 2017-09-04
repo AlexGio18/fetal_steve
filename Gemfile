@@ -41,7 +41,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 # gem 'twitter-bootstrap-rails', '2.2.8'
 gem 'therubyracer'
 gem "less-rails"
-gem 'dotenv-rails', groups: [:development, :test]
+gem 'dotenv-rails'
 gem "recaptcha", require: "recaptcha/rails"
 # gem 'jcrop-rails-v2'
 
