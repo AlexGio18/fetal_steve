@@ -42,6 +42,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'therubyracer'
 gem "less-rails"
 gem 'dotenv-rails'
+gem 'aws-sdk'
 gem "recaptcha", require: "recaptcha/rails"
 # gem 'jcrop-rails-v2'
 
