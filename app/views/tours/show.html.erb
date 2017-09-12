@@ -1,34 +1,43 @@
 <div class="row">
-  <div class="col-xs-12">
+  <div class="col-xs-12 col-md-4">
+
+    <h1 class="text-center">
     <%= link_to tours_path do %>
-    <i class="glyphicon glyphicon-log-out back-icon" title="Back To Tours"></i>
+      <i class="glyphicon glyphicon-log-out back-icon" title="Back To Tours"></i>
     <% end %>
-    <h1 class="text-center"><%= @tour.name %></h1>
 
+      <%= @tour.name %>
+    </h1>
+    <h4 class="text-center">
+      <em><%= @tour.quote %></em>
+    </h4>
+    <table class="table table-responsive">
+      <tr>
+        <th>Location</th>
+        <td><%= @tour.location %></td>
+      </tr>
+      <tr>
+        <th>Dates</th>
+        <td><%= @tour.date %></td>
+      </tr>
+      <tr>
+        <th>Tourers</th>
+        <td><%= @tour.tourers %></td>
+      </tr>
+      <tr>
+        <th>Places</th>
+        <td><%= @tour.description %></td>
+      </tr>
+    </table>
   </div>
 </div>
 
 <hr />
 
-<%= render 'tour_editor_toolbar' %>
-
-<div class="row tour-info">
-  <div class="visible-md visible-lg col-md-1">
-  </div>
-  <div class="col-xs-12 col-md-10">
-    <p><%= @tour.location %></p>
-    <p><%= @tour.date %></p>
-    <p><%= @tour.tourers %></p>
-    <p><%= @tour.description %></p>
-  </div>
-  <div class="visible-md visible-lg col-md-1">
-  </div>
-</div>
-
-<hr />
-
+<div class="col-xs-12 col-md-8">
   <% if @tour.galleries.size > 0 %>
      <%= render "galleries/show_gallery" %> 
   <% end %>
+</div>
 
-
+<%= render 'tour_editor_toolbar' %>

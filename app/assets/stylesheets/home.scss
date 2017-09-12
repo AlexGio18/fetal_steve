@@ -11,8 +11,13 @@ p {
   color: #333 !important;
 }
 
+h1 {
+  position: relative !important;
+}
+
 h2 {
   margin-bottom: 20px !important;
+  position: relative !important;
 }
 
 /* overall layout */
@@ -35,13 +40,6 @@ h2 {
   font-weight: bold;
 }
 
-.back-icon {
-  margin-top: 25px;
-  font-size: 2em;
-  transform: rotate(180deg);
-  float: left;
-}
-
 /* navbar */
 .navbar {
   border-radius: 0px !important;
@@ -50,7 +48,7 @@ h2 {
 }
 
 .navbar-primary {
-  background-color: rgba(234, 59, 106, 1);
+  background-color: #007bed;
 }
 
 .navbar-primary .navbar-brand {
@@ -87,15 +85,15 @@ h2 {
 }
 
 .nav-menu-item a:hover {
-  background-color: rgba(206, 18, 94, 1) !important;
+  background-color: #014c8c !important;
 }
 
 .nav-menu-item a:focus {
-  background-color: rgba(206, 18, 94, 1) !important;
+  background-color: #014c8c !important;
 }
 
 .dropdown-toggle:focus {
-  background-color: rgba(206, 18, 94, 1) !important;
+  background-color: #014c8c !important;
 }
 
 .dropdown a:hover {
@@ -103,11 +101,11 @@ h2 {
 }
 
 .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
-  background-color: rgba(206, 18, 94, 1) !important;
+  background-color: #014c8c !important;
 }
 
 .dropdown-primary {
-  background-color: rgba(234, 59, 106, 1) !important;
+  background-color: #007bed !important;
 }
 
 #welcomeSum {

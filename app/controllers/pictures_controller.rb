@@ -1,4 +1,5 @@
 class PicturesController < ApplicationController
+   # before_action :set_s3_direct_post, only: [:new, :edit, :create, :update, :destroy]
   # GET /pictures
   # GET /pictures.json
   def index
@@ -111,6 +112,9 @@ class PicturesController < ApplicationController
   end
 
   private
+    def set_s3_direct_post
+      @s3_direct_post = S3_BUCKET.presigned_post(key: "uploads/#{SecureRandom.uuid}/${filename}", success_action_status: '201', acl: 'public-read')
+    end
 
   def picture_params
     params.require(:picture).permit(:description, :gallery_id, :image)

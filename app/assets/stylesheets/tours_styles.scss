@@ -1,3 +1,12 @@
+.back-icon {
+  position: absolute !important;
+  transform: rotate(180deg);
+  left: 0px !important;
+  top: 10px !important;
+  color: #428bca;
+  font-size: 0.9em;
+}
+
 .tour-item {
   padding: 10px 0px;
 }
