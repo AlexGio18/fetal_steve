@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-xs-12 col-md-4">
+  <div class="col-xs-12">
 
     <h1 class="text-center">
     <%= link_to tours_path do %>
@@ -11,7 +11,7 @@
     <h4 class="text-center">
       <em><%= @tour.quote %></em>
     </h4>
-    <table class="table table-responsive">
+    <table class="table table-responsive tour-table">
       <tr>
         <th>Location</th>
         <td><%= @tour.location %></td>
@@ -34,7 +34,7 @@
 
 <hr />
 
-<div class="col-xs-12 col-md-8">
+<div class="col-xs-12">
   <% if @tour.galleries.size > 0 %>
      <%= render "galleries/show_gallery" %> 
   <% end %>

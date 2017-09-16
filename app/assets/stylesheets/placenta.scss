@@ -1,5 +1,5 @@
 .posts-container {
-  width: 860px;
+  max-width: 860px;
   margin: auto;
 }
 
@@ -12,35 +12,6 @@
   margin-top: 20px;  
 }
 
-.fetal-button {
-  font-size: 1.2em;
-  color: #fff;
-  padding: 7px 14px;
-}
-
-.btn-pill {
-  -webkit-border-radius: 16px;
-  -moz-border-radius: 16px;
-  border-radius: 16px;
-}
-
-.update-button {
-  background-color: #51A39D;
-}
-
-.update-button:hover {
-  color: #fff;
-  text-decoration: none;
-  background-color: #5ac7bf;
-}
-
-.delete-button {
-  
-}
-
-
-
 .posts-date {
   color: #8f958f;
 }
-
