@@ -1,5 +1,9 @@
 body {
-  font-family: georgia, serif !important;
+  font-family: 'Roboto', sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto Slab', serif !important;
 }
 
 body.modal-open { 
@@ -43,8 +47,8 @@ h2 {
 /* navbar */
 .navbar {
   border-radius: 0px !important;
-  min-height: 70px !important;
-  font-family: arial, sans-serif;
+  height: 80px !important;
+  font-family: 'Roboto Slab', serif !important;
 }
 
 .navbar-primary {
@@ -52,16 +56,24 @@ h2 {
 }
 
 .navbar-primary .navbar-brand {
-  color: #fff !important;  
+  color: #fff !important;
+  font-size: 1.8em !important; 
+  padding: 20px 15px !important;
+}
+
+.navbar-primary .navbar-brand:hover {
+  background-color: #014c8c !important;
+  height: 79px;
 }
 
 .navbar-primary ul > li > a {
-  color: #fff;  
+  color: #fff; 
+  font-size: 1.2em;
 }
 
 .navbar-nav > li > a {
-  padding-top: 25px !important;
-  padding-bottom: 25px !important;
+  padding-top: 30px !important;
+  padding-bottom: 29px !important;
 }
 
 .navbar-brand {
