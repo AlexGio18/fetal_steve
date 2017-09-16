@@ -1,5 +1,5 @@
 class GalleriesController < ApplicationController
-  before_action :set_s3_direct_post, only: [:new, :edit, :create, :update, :destroy]
+  # before_action :set_s3_direct_post, only: [:new, :edit, :create, :update, :destroy]
 
   include GalleryHelper
   
@@ -67,9 +67,9 @@ class GalleriesController < ApplicationController
   end
 
   private
-    def set_s3_direct_post
-      @s3_direct_post = S3_BUCKET.presigned_post(key: "uploads/#{SecureRandom.uuid}/${filename}", success_action_status: '201', acl: 'public-read')
-    end
+    # def set_s3_direct_post
+    #   @s3_direct_post = S3_BUCKET.presigned_post(key: "uploads/#{SecureRandom.uuid}/${filename}", success_action_status: '201', acl: 'public-read')
+    # end
 
     def gallery_params
       params.require(:gallery).permit(:description, :name, :pictures, :tour_id)
