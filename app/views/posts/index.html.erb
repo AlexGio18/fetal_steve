@@ -1,18 +1,28 @@
 <div class="row">
   <h1 class="text-center"> Placenta </h1>
 
-  <hr />
-
-  <%= render 'posts_editor_toolbar' %>
-  <div class="col-offset-xs-1 col-xs-10">
-    <h3> Posts </h3>
-    <ul>
+  <div class="posts-container">
+    <ul class="list-unstyled">
       <% @posts.each do |post| %>
       <li>
-        <%= post.title %><br />
-        <%= post.description %><br />
-        <%= link_to "Edit", edit_post_path(post) %>
-        <%= link_to "Delete", post_path(post), method: :delete, data: {confirm: "Really delete #{post.title}?"} %> 
+        <div class="row">
+          <div class="col-xs-12">
+            <h3 class="pull-left"><%= post.title %></h3>
+            <% if current_user %>
+              <div class="post-edit-buttons pull-right">
+                <%= link_to "Update", edit_post_path(post), :class => ["fetal-button", "update-button", "btn-pill"] %>
+                <%= link_to "Delete", post_path(post), :class=> ["fetal-button", "delete-button", "btn-pill"], method: :delete, data: {confirm: "Really delete #{post.title}?"} %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <% if post.date == '' || post.date == nil %>
+          <span class="posts-date"><%= post.created_at.strftime("%B %d %Y") %></span>
+        <% else %>
+          <span class="posts-date"><%= post.date %></span>
+        <% end %>
+        <p class="posts-paragraph"><%= post.description %></p>
+        <hr />
       </li>
       <% end %>
     </ul>

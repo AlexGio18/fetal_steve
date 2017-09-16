@@ -1,8 +1,15 @@
 .thumbnail {
+  position: relative;
   border-radius: 0px !important;
-  width: 200px;
+  width: 250px;
   padding: 5px;
   height: auto;
+}
+
+.tour-delete {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .thumbnail-crop {

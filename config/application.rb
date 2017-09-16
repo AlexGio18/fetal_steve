@@ -22,5 +22,18 @@ module FetalSteve
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins 'https://floating-sands-85312.herokuapp.com/'
+        resource '*', :headers => :any, :methods => [:get, :post, :put, :delete, :options]
+      end
+    end
+
+        config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins 'localhost:3000'
+        resource '*', :headers => :any, :methods => [:get, :post, :put, :delete, :options]
+      end
+    end
   end
 end
