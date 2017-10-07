@@ -10,9 +10,9 @@
 }
 
 .btn-pill {
-  -webkit-border-radius: 16px;
-  -moz-border-radius: 16px;
-  border-radius: 16px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
 }
 
 .update-button {
@@ -33,11 +33,19 @@
 
 .submit-button {
   border: 0px;
-  background-color: #EE627D;
+  background-color: #ff404b;
 }
 
 .submit-button:hover {
   background-color: #ff9eb1;
+}
+
+.cancel-button {
+  background-color: #c70461;
+}
+
+.cancel-button:hover {
+  background-color: #ff72b5;
 }
 
 

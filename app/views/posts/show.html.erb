@@ -1,7 +1,25 @@
-<h3>Scholarship Entries</h3>
+<h1 class="text-center">Scholarship Entries</h1>
+<hr />
+
 <p>Entries for the 2008 Fetal Steve Dare to Dream Scholarship</p>
-<ul>
+<ul class="list-group">
   <% @tours.each do |tour| %>
-  <li><%= link_to "#{tour.name}", tour_path(tour) %></li>
+  <div class="col-xs-6 col-sm-4 col-md-3 text-center tour-item">
+    <%= link_to tour_path(tour) do %>
+      <span class="tour-label">
+        <%= tour.name %>  
+      </span>
+      <div class="thumbnail" style="margin: auto;">
+       <% if user_signed_in? %>
+          <%= button_to "delete", tour_path(tour), class: "btn btn-danger btn-xs tour-delete" , method: :delete , data: {confirm: "Really delete #{tour.name}?"} %>
+        <% end %>
+        <% if tour.galleries.length > 0 %>
+          <div class="thumbnail-crop">
+            <%= image_tag tour.galleries[0].pictures[0].image.url %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
   <% end %>
 </ul>
