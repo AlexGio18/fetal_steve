@@ -3,7 +3,11 @@ class Picture < ActiveRecord::Base
   belongs_to :gallery
   has_many :comments
 
-    has_attached_file :image
+    has_attached_file :image,
+                      :bucket => ENV['S3_BUCKET'],
+                      :url => ':s3_domain_url',
+                      :path => '/:class/:attachment/:id_partition/:style/:filename'
+
     # :path => ":rails_root/public/images/:id/:filename",
     # :url  => "/images/:id/:filename"
 
