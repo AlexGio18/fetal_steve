@@ -20,4 +20,4 @@
 
 /db/seeds.rb
 
-.env.recaptcha
+.env

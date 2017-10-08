@@ -4,10 +4,15 @@ class Picture < ActiveRecord::Base
   has_many :comments
 
     has_attached_file :image,
-    :path => ":rails_root/public/images/:id/:filename",
-    :url  => "/images/:id/:filename"
+                      :bucket => ENV['S3_BUCKET'],
+                      :url => ':s3_domain_url',
+                      :path => '/:class/:attachment/:id_partition/:style/:filename'
 
-  do_not_validate_attachment_file_type :image
+    # :path => ":rails_root/public/images/:id/:filename",
+    # :url  => "/images/:id/:filename"
+
+ validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+end
 
     # storage: :s3,
     # s3_credentials: {
@@ -17,4 +22,4 @@ class Picture < ActiveRecord::Base
     #   s3_region: 'us-east-1'
     # }
 
-end
+# end
