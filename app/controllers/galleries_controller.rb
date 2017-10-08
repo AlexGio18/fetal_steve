@@ -19,7 +19,7 @@ class GalleriesController < ApplicationController
 
   def edit
     @tour = Tour.find(params[:tour_id])
-    @gallery = Gallery.find(@tour.gallery.id)
+    @gallery = Gallery.find(params[:id])
   end
 
   def create
@@ -47,7 +47,7 @@ class GalleriesController < ApplicationController
 
   def update
     @tour = Tour.find(params[:tour_id])
-    @gallery = Gallery.find(@tour.gallery.id)
+    @gallery = Gallery.find(params[:id])
 
     respond_to do |format|
       if @gallery.update_attributes(gallery_params)
@@ -64,6 +64,13 @@ class GalleriesController < ApplicationController
         format.json { render json: @gallery.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def destroy
+    @tour = Tour.find(params[:tour_id])
+    @gallery = Gallery.find(params[:id])
+    @gallery.destroy
+    redirect_to tour_path(@tour)
   end
 
   private
