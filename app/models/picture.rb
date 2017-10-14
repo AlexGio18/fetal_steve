@@ -6,7 +6,10 @@ class Picture < ActiveRecord::Base
     has_attached_file :image,
                       :bucket => ENV['S3_BUCKET'],
                       :url => ':s3_domain_url',
-                      :path => '/:class/:attachment/:id_partition/:style/:filename'
+                      :path => '/:class/:attachment/:id_partition/:style/:filename',
+                      :styles => {
+                        :thumb => "300x200"
+                      }
 
     # :path => ":rails_root/public/images/:id/:filename",
     # :url  => "/images/:id/:filename"

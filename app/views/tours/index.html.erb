@@ -3,31 +3,46 @@
 <hr />
 
 <% if user_signed_in? %>
-  <div class="editor-toolbar">
-    <div>
-      Editor Toolbar
-    </div>
-    <%= link_to "Create Tour", new_tour_path %>
+  <div class="row editor-toolbar">
+    <%= link_to "Create Tour", new_tour_path, :class=> ["fetal-button", "create-button", "btn-pill"] %>
   </div>
 <% end %>
 
 <ul class="list-group">
   <% @tours.each do |tour| %>
-  <div class="col-xs-6 col-sm-4 col-md-3 text-center tour-item">
-    <%= link_to tour_path(tour) do %>
-      <span class="tour-label">
-        <%= tour.name %>  
-      </span>
-      <div class="thumbnail" style="margin: auto;">
+  <div class="col-xs-12 col-md-6 col-lg-4 text-center">
+    <%= link_to tour_path(tour), :class => "tour-link" do %>
+    <span class="tour-label">
+      <%= tour.name %>  
+    </span>
+    <div class="tour-item">
+      <div class="thumbnail">
        <% if user_signed_in? %>
           <%= button_to "delete", tour_path(tour), class: "btn btn-danger btn-xs tour-delete" , method: :delete , data: {confirm: "Really delete #{tour.name}?"} %>
         <% end %>
         <% if tour.galleries.length > 0 %>
           <div class="thumbnail-crop">
-            <%= image_tag tour.galleries[0].pictures[0].image.url %>
+            <%= image_tag tour.galleries[0].pictures[0].image.url(:thumb) %>
           </div>
         <% end %>
       </div>
+      <div>
+        <table class="table tour-thumbnail-table">
+          <tr>
+            <th>Location</th>
+            <td><%= tour.location %></td>
+          </tr>
+          <tr>
+            <th>Dates</th>
+            <td><%= tour.date %></td>
+          </tr>
+          <tr>
+            <th>Tourers</th>
+            <td><%= tour.tourers %></td>
+          </tr>
+        </table>
+      </div>
+    </div>
     <% end %>
   </div>
   <% end %>
