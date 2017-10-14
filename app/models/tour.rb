@@ -16,9 +16,10 @@ class Tour < ApplicationRecord
     self.order("id DESC").select{ |tour| tour.scholarship == false && tour.name.include?('#') }
   end
 
-  def self.pictures
+  def self.total_pictures
     sum = 0
-    self.galleries.each{ |gallery| sum += gallery.pictures.reduce(:+)  }
+    self.galleries.each{ |gallery| sum += gallery.pictures.count  }
+    return sum
   end
 
 end
