@@ -13,8 +13,11 @@
   <div class="col-xs-12 col-md-6 col-lg-4 text-center">
     <%= link_to tour_path(tour), :class => "tour-link" do %>
     <span class="tour-label">
-      <%= tour.name %>  
+      <%= tour.name %>
     </span>
+    <div>
+      <%= total_pictures(tour) %> Picture<% if total_pictures(tour) != 1 %>s<% end %>
+    </div>
     <div class="tour-item">
       <div class="thumbnail">
        <% if user_signed_in? %>
