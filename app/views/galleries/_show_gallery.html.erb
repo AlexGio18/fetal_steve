@@ -1,13 +1,19 @@
-<% @tour.galleries.each do |gallery| %>
+<% @tour.galleries.each_with_index do |gallery, i| %>
   <ul>
     <div class="gallery-header col-xs-12">
-      <h3 class="gallery-title"> <%= gallery.name %> </h3>
+      <h3 class="gallery-title"> 
+        <% if gallery.name != "" %>
+          <%= gallery.name %>
+        <% else %>
+          Gallery #<%= i + 1 %>
+        <% end %>
+      </h3>
       <% if current_user %>
       <%= link_to "delete", [gallery.tour, gallery], method: :delete, :class=> ["fetal-button", "delete-button", "btn-pill"], data: {confirm: "Really delete this gallery?"} %>
       <%= link_to "update", edit_tour_gallery_path(@tour.id, gallery.id), :class=>["fetal-button", "update-button", "btn-pill"] %>
       <% end %>
     </div>  
-    <% gallery.pictures.each do |pic| %>
+    <% gallery.pictures.order(created_at: :asc).each do |pic| %>
       <div class="col-xs-6 col-sm-4 col-md-3 text-center">
         <div class="thumbnail-modal" onclick="showModal('<%= pic.id %>');">
           <div class="thumbnail" style="margin: auto;">
