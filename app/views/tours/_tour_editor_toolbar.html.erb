@@ -2,8 +2,6 @@
   <div class="row editor-toolbar">
     <%= link_to "Update", edit_tour_path, :class => ["fetal-button", "btn-pill","update-button"] %>
     <%= link_to "Delete", tour_path(@tour), method: :delete, data: {confirm: "Really delete #{@tour.name}?"}, :class => ["fetal-button", "delete-button", "btn-pill"] %>
-    <%= link_to "Add a Gallery", new_tour_gallery_path(@tour), :class => ["fetal-button", "btn-pill", "add-button", "text-right"] %>
-</div>
-      
+    <%= link_to "Add a Gallery", new_tour_gallery_path(@tour), :class => ["fetal-button", "btn-pill", "add-button"] %>
   </div>
 <% end %>
