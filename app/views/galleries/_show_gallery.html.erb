@@ -66,8 +66,7 @@
                   <%= f.label :description, :class => 'control-label' %>
                   <%= f.text_area :description, :class => 'form-control' %>
                 </div>
-                <div id="recaptcha-container-<%= pic.id %>">
-                </div>
+                <%= recaptcha_tags %>
                 <div class="form-actions">
                   <%= f.submit nil, :class => 'btn btn-primary' %>
                   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
