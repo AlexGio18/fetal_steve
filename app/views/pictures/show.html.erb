@@ -1,25 +1,60 @@
 <%- model_class = @picture.class -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+<div class="col-xs-12">
+  <h1 class="text-center">
+    <%= link_to tour_path(@picture.gallery.tour_id) do %>
+      <i class="glyphicon glyphicon-log-out back-icon" title="Back To Tour"></i>
+    <% end %>
+
+    <%=t '.title', :default => model_class.model_name.human %>
+
+
+  </h1>
 </div>
+
+<hr />
 
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
   <dd><%= @picture.description %></dd>
   <dt><strong><%= model_class.human_attribute_name(:image) %>:</strong></dt>
   <dd><%= @picture.image %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:gallery_id) %>:</strong></dt>
-  <dd><%= @picture.gallery_id %></dd>
+  <dt><strong>Tour:</strong></dt>
+  <dd><%= @picture.gallery.tour.name %></dd>
 </dl>
 
-<div class="form-actions">
-  <%= link_to t('.back', :default => t("helpers.links.back")),
-              tour_gallery_path(@picture.gallery.tour), :class => 'btn'  %>
-  <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_picture_path(@picture), :class => 'btn' %>
-  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              picture_path(@picture),
-              :method => 'delete',
-              :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
-              :class => 'btn btn-danger' %>
+
+
+<div class="col-xs-offset-1 col-xs-10 comment-well">
+  <div class="row">
+    <ul class="list-group">
+      <% @picture.comments.each do |comment| %>
+        <li class="list-group-item"> 
+
+            <strong>Author: </strong> <%= comment.author %> <br />
+            <strong>Body: </strong> <%= comment.description %> <br />
+            <%= comment.created_at %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div> 
+
+<div class="col-xs-offset-1 col-xs-10">
+  <%= form_for [@picture, @comment], :html => { :class => 'form-horizontal', multipart: true } do |f| %>
+    <%= f.hidden_field :picture_id, :value => @picture.id %>
+    <div class="form-group">
+      <%= f.label :author, :class => 'control-label' %>
+      <%= f.text_field :author, :class => 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :description, :class => 'control-label' %>
+      <%= f.text_area :description, :class => 'form-control' %>
+    </div>
+    <%= recaptcha_tags %>
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn-pill fetal-button submit-button' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  tour_path(@picture.gallery.tour), :class => 'btn-pill fetal-button cancel-button' %>
+    </div>
+  <% end %>
 </div>

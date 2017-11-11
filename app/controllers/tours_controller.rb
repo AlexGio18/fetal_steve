@@ -1,4 +1,6 @@
 class ToursController < ApplicationController
+
+  include TourHelper
   
   def index
     @tours = Tour.fetal_tours

@@ -1,21 +1,7 @@
 <% if user_signed_in? %>
-  <div class="editor-toolbar">
-    <div class="panel panel-info">
-      <div class="panel-heading"><h5>Editor Toolbar</h5></div>
-      <div class="panel-body">
-        <ul class="list-group">
-          <li class="list-group-item">
-            <%= link_to "Edit this Tour", edit_tour_path %>
-          </li>
-          <li class="list-group-item">
-          <%= link_to "Delete", tour_path(@tour), method: :delete, data: {confirm: "Really delete #{@tour.name}?"} %>
-          </li>
-          <li class="list-group-item">
-          <%= link_to "Add a Gallery", new_tour_gallery_path(@tour) %>
-          </li>
-        </ul>
-      </div>
-</div>
-      
+  <div class="row editor-toolbar">
+    <%= link_to "Update", edit_tour_path, :class => ["fetal-button", "btn-pill","update-button"] %>
+    <%= link_to "Delete", tour_path(@tour), method: :delete, data: {confirm: "Really delete #{@tour.name}?"}, :class => ["fetal-button", "delete-button", "btn-pill"] %>
+    <%= link_to "Add a Gallery", new_tour_gallery_path(@tour), :class => ["fetal-button", "btn-pill", "add-button"] %>
   </div>
 <% end %>
