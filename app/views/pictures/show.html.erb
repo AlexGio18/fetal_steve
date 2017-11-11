@@ -17,7 +17,7 @@
   <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
   <dd><%= @picture.description %></dd>
   <dt><strong><%= model_class.human_attribute_name(:image) %>:</strong></dt>
-  <dd><%= @picture.image.url %></dd>
+  <dd><%= image_tag @picture.image.url %></dd>
   <dt><strong>Tour:</strong></dt>
   <dd><%= @picture.gallery.tour.name %></dd>
 </dl>
