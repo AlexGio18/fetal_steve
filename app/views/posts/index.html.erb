@@ -1,158 +1,13 @@
 <div class="row">
   <h1 class="text-center"> Placenta </h1>
+
   <div class="posts-container">
+    <% if current_user %>
+      <%= link_to "New Post", new_post_path, :class => 'btn-pill fetal-button create-button' %>
+    <% end %>
     <hr />
+
     <ul class="list-unstyled">
-      <li>
-        <div class="row">
-          <div class="gallery-header col-xs-12">
-            <h3 class="gallery-title pull-left">Stephen Edwin Copernicus Educational Foundation</h3>
-          </div>
-        </div>
-        <span class="posts-date">July 11th, 2008</span>
-        <p class="posts-paragraph">January 25, marking the first arrival of Fetal Steve, has always been THE day of celebration, but we now have another day of celebration: June 16th. Thanks to the handy-work of Trent, as of June 16th, 2008 the Stephen Edwin Copernicus Educational Foundation is now officially recognized as a non-profit organization by the State of Ohio.</p>
-        <p class="posts-paragraph">
-          Having recently awarded the very first annual Fetal Steve Dare to Dream scholarship, the establishment of our non-profit organization is another step forward toward our goal: promoting the importance of education, and encouraging students to chase their dreams, no matter how ridiculous they may seem.
-        </p>
-        <hr />
-      </li>
-      <li>
-        <div class="row">
-          <div class="gallery-header col-xs-12">
-            <h3 class="gallery-title pull-left">Winar!!!</h3>
-          </div>
-        </div>
-        <span class="posts-date">May 24th, 2008</span>
-        <p class="posts-paragraph">We are proud to announce that the winner of the 2008 Fetal Steve Dare to Dream Scholarship is Stephen Ferguson.</p>
-        <p class="posts-paragraph">
-          Sadly, we were underwhelmed by the tours, which seemed to be an after-thought for both participants. Both could have done a better job of framing their location with recognizable landmarks and such. Mark took a picture with the Franklin County Courthouse sign which was good, but a shot of the building outside would have been better (and probably more interesting). The ‘test tube baby’ and ‘dutch heritage’ pictures were both quite good. In Stephen’s case, without the picture titles, we would not have been able to guess his location. Mixing Fetal Steve with religious bumper stickers, however, was a very good idea.
-        </p>
-        <p class="posts-paragraph">
-          With this in mind, our decision came down to the optional essays, which were both brilliant. Mark’s Haiku was short and succinct. It related to current events (the Japan tour), and in 17 syllables made us smile. But Stephen’s short essay allowed him to prove to us that he understood the idea behind the 601-dollar human articulated fetal skeleton.
-        </p>
-        <p class="posts-paragraph">
-          So congratulations, Mr. Ferguson. We wish you luck in your future endeavors. And let us give you this bit of advice, as noted by Zachary: hmm the one boy seems to fear benway…… you should disrespect benway as much as possible, not fear him.
-        </p>
-        <hr />
-      </li>
-      <li>
-        <div class="row">
-          <div class="gallery-header col-xs-12">
-            <h3 class="gallery-title pull-left">Stephen Ferguson’s Fetal Steve Scholarship Entry</h3>
-          </div>
-        </div>
-        <span class="posts-date">April 23rd, 2008</span>
-        <p class="posts-paragraph">As a respectable human being, I want to tell you that I was disgusted. I want to say that the very name drove me away. I want to make you believe that I never pursued anything past my initial introduction. But I can’t. It would all be a lie.
-        </p>
-        <p class="posts-paragraph">
-          The annual musical was in full swing and the NHS kids were dutifully scrounging hours by eating free food in the middle school home ec rooms. Drawn from the stacks of cookies by the laughter of a large group, predominantly AP Biology students, I managed to discern only two words.
-        </p>
-        <p class="posts-paragraph">
-          “What’s a Fetal Steve?”
-        </p>
-        <p class="posts-paragraph">
-          “You’ve never heard of Fetal Steve?” The mood change in the group was instantaneous. Looks of shock and disbelief stared back at me accusingly, as if I had just committed a sin. The group beckoned to me as a shook my head, motioning for me to sit down and receive the Story of Steve. My curiosity building, I complied.
-        </p>
-        <p class="posts-paragraph">
-          His tale, far from revolting me, sparked something deep within. It was a modern-day quest, on par with if not exceeding that of the Holy Grail. The heroics and sacrifice of The Six were not lost on me and I hungered for more. This led me to his website and possibly one of the greatest photographs ever taken: a young girl in her father’s arms screaming in terror at Fetal Steve’s presence. His spell was complete; Steve’s grasp enclosed me.
-        </p>
-        <p class="posts-paragraph">
-          Upon returning to school, however, I was dismayed to find that my new idol was MIA, traveling in the process of furthering his legend. Dejected, I wallowed in the AP Chemistry classroom, my only beacon of hope gradually slipping away.
-        </p>
-        <p class="posts-paragraph">
-          Until that one shining day that Fetal Steve returned.
-        </p>
-        <p class="posts-paragraph">
-          Hardly daring to believe the rumors, I approached Ms. Shea’s room with trepidation, fearing my obsession had been wasted or expectations had been built to high. As I entered the room, all seemed normal. But then, seemingly with a burst of sunlight and a chorus of angels, Steve appeared on the front desk in all his Fetal glory. Sporting a new outfit and brazenly buffing a cigarette, despite the questionable legality of a fetus possessing tobacco, Fetal Steve exemplified perfection, from the bottom of his missing foot to the top of his Mythbusters-autographed head.
-        </p>
-        <p class="posts-paragraph">
-          My time limited by the bell and Mr. Benway’s threats of dissociation calculations, I had time only to take a quick picture and steal a lingering glance. As I left the room, astoundingly the joy provided by Fetal Steve remained, a rejuvenating force in the bleakness of the school year. He has and forever remain as such, and for that I am in his debt. Thank you, Ms Shea. Thank you, The Six. And most importantly, thank you, Steve.
-        </p>
-        <p class="posts-paragraph">
-          Check out <a href="/tours/38">Stephen's Tour.</a>
-        </p>
-        <hr />
-      </li>
-      <li>
-        <div class="row">
-          <div class="gallery-header col-xs-12">
-            <h3 class="gallery-title pull-left">Mark Ortiz’s Fetal Steve Scholarship Entry</h3>
-          </div>
-        </div>
-        <span class="posts-date">April 19th, 2008</span>
-        <p class="posts-paragraph text-center"><em>Odd how a fetus</em><br />
-                                   <em>So frail and sickly looking</em><br />
-                                   <em>Can inspire dreams</em>
-        </p>
-        <p class="posts-paragraph">Check out <a href="tours/37">Mark's Tour.</a></p>
-        <hr />
-      </li>
-      <li>
-        <div class="row">
-          <div class="gallery-header col-xs-12">
-            <h3 class="gallery-title pull-left">Fetal Steve Dare to Dream Scholarship</h3>
-          </div>
-        </div>
-        <span class="posts-date">April 17th, 2008</span>
-        <p class="posts-paragraph">This year we announced the first annual Fetal Steve Dare to Dream scholarship for Ashland High School seniors. We’ll be posting the finalists’ entries in the upcoming days.</p>
-        <p class="posts-paragraph text-center"><strong>Fetal Steve Dare to Dream Scholarship</strong></p>
-        <p class="posts-paragraph text-center"><em>He touched us all emotionally as well as inappropriately</em></p>
-        <p class="posts-paragraph">In 2002 The Six, a group of Ashland High School students consisting of Alan Britenbucher, Luke Chronister, Zac Feldkamp, Trent Leslie, Eric North, and Marshall Scott defied naysayers and dared to show that anything is possible when they raised over 601 dollars to purchase a human articulated fetal skeleton known as “Fetal” Steve Edwin Copernicus. 6 years later, Fetal Steve still reminds us of the endless possibilities that we need only pursue to realize.</p>
-        <p class="posts-paragraph">The Fetal Steve Dare to Dream Scholarship is a one-time award of $601, designed to encourage students to think for themselves, dare to dream, and rise above the status-quo.</p>
-        <p class="posts-paragraph">Requirements and Such_______________________________</p>
-        <p class="posts-paragraph">Applicants must be college-bound, graduating seniors and must be former or current students of AP Biology. Students seeking the Fetal Steve Dare to Dream Scholarship should complete the application below and submit it to Sheryl Shea. Applicants may also choose to write a short essay on some topic (we’re not picky) to submit along with the application.</p>
-        <p class="posts-paragraph">Responsible finalists will be selected and each required to take Fetal Steve on a tour of their own. This entails taking Fetal Steve to some area and taking pictures with people, landmarks, and whatever else happens to be around (see http://www.fetalsteve.com for ideas). Students should think creatively about the tour and should not necessarily be concerned with taking Steve to far and exotic places. Finalists may work in teams in which case the scholarship will be split evenly among the winning members.</p>
-        <p class="posts-paragraph">The winning tour as well as honorable mentions and entertaining essays will be posted on fetalsteve.com. The winner of the award will receive a personal check of $601 dollars made out to the recipient or both the recipient and the secondary school they plan to attend.</p>
-        <p class="posts-paragraph">Good Luck!</p>
-        <hr />
-      </li>
-      <li> 
-        <div class="row">
-          <div class="gallery-header col-xs-12">
-            <h3 class="gallery-title pull-left">New Fetal Steve Website is Live!!!</h3>
-          </div>
-        </div>
-        <span class="posts-date">April 15th, 2008</span>
-        <p class="posts-paragraph">After a good deal of man-hours and some group work, and much learning, the new Fetal Steve website is up! Special thanks goes out to Matt who put so much time and effort into last iteration of FetalSteve.com, but it’s time to move on.</p>
-        <p class="posts-paragraph">We’ve got some great stuff on the way, like The Fetal Steve Dare to Dream scholarship. And while we’re still recovering from the <a href="/tour/47">Japan Tour</a>, you can bet there’s another trip on the horizon.</p>
-        <p class="posts-paragraph">If you don’t know what all this is, go read the <a href="/story"></a>story or just start browsing through the <a href="/tours">tours</a>.</p>
-        <p class="posts-paragraph">The website is good to go, but we’re still tweaking it here and there, so any comments or suggestions are more than welcome.</p>
-        <hr />
-      </li>
-      <li>
-        <div class="row">
-          <div class="gallery-header col-xs-12">
-            <h3 class="gallery-title pull-left">The Bone Yard</h3>
-          </div>
-        </div>
-        <span class="posts-date">April 15th, 2008</span>
-        <p class="posts-paragraph">Over the years we’ve collected a number of random photos, that while entertaining, don’t necessarily belong with any tour. We’ve attempted to bring all these together in a new section titled, The Bone Yard. Here you’ll see such classics as Zac’s senior portrait and Steve with the Mythbusters. Stay tuned as more oddities come out of the woodwork.</p>
-        <p class="posts-paragraph"><a href="tours/41">The Bone Yard</a></p>
-        <hr />
-      </li>
-      <li>
-        <div class="row">
-          <div class="gallery-header col-xs-12">
-            <h3 class="gallery-title pull-left">Captain Eric's Art</h3>
-          </div>
-        </div>
-        <span class="posts-date">April 15th, 2008</span>
-        <p class="posts-paragraph">“While we were saving our money and stealing others’ money, we had to keep ourselves entertained. That’s where Eric came in. Eric took the standard picture from the Carolina web site and put Steve into several respectable (and some not so respectable) careers. Even after getting the fetus, however, Eric continues to modify the occasional picture from a Fetal Steve Tour. This page is a dedication to his brilliance.”</p>
-        <p class="posts-paragraph"><a href="/tours/40">Eric's Art</a></p>
-        <hr />
-      </li>
-      <li>
-        <div class="row">
-          <div class="gallery-header col-xs-12">
-            <h3 class="gallery-title pull-left">Operation R.O.C.K. Solid a.k.a. The Cube</h3>
-          </div>
-        </div>
-        <span class="posts-date">April 12th, 2008</span>
-        <p class="posts-paragraph">From a long time ago:</p>
-        <p class="posts-paragraph">“Welcome to the only site on the planet that is dedicated to encasing school rocks in cement! You should feel honored. Go ahead, take a gander at the galleries, giggle like a little girl at the construction pictures, and cry with the rest of us as you stroll through the destruction gallery. Any gazer will notice one thing, the absence of pictures showing us in the act. No one will ever see that, for the pictures were never taken. Hell, we don’t even remember it. Looking back, it loosely resembles a dark blur in my memory. That’s it. Like the pyramids of Egypt, the steps taken to put this landmark in its place will remain unknown for all of time.”</p>
-        <p class="posts-paragraph"><a href="/tours/39">The Pictures</a></p>
-        <hr />
-      </li>
       <% @posts.each do |post| %>
       <li>
         <div class="row">
@@ -171,7 +26,11 @@
         <% else %>
           <span class="posts-date"><%= post.date %></span>
         <% end %>
-        <p class="posts-paragraph"><%= post.description %></p>
+        <p class="posts-paragraph">
+          <div class="fr-view">
+          <%= raw post.description %>
+          </div>
+        </p>
         <hr />
       </li>
       <% end %>

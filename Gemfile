@@ -46,6 +46,8 @@ gem "less-rails"
 gem 'dotenv-rails'
 gem 'aws-sdk', '~> 2.3'
 gem "recaptcha", require: "recaptcha/rails"
+gem "wysiwyg-rails"
+gem "font-awesome-rails"
 # gem 'jcrop-rails-v2'
 
 group :development, :test do

@@ -12,8 +12,14 @@
     </div>
     <div class="col-xs-12">
       <div class="form-group">
+        <%= f.label :date, :class => 'control-label' %>
+        <%= f.text_field :date, :class => 'form-control' %>
+      </div>
+    </div>
+    <div class="col-xs-12">
+      <div class="form-group">
         <%= f.label :description, :class => 'control-label' %>
-        <%= f.text_area :description, :class => "form-control" %>
+        <%= f.text_area :description, :class => "form-control", id: "wysiwyg" %>
       </div>
     </div>
     <div class="col-xs-12">
@@ -24,3 +30,10 @@
     <% end %>
 
 </div>
+
+<script>
+    $('#wysiwyg').froalaEditor({
+      inlineMode: false,
+      heightMin: '200px'
+    })
+</script>

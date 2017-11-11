@@ -10,30 +10,42 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+
 //= require jquery
 //= require jquery_ujs
+//= require froala_editor.min.js
+//= require plugins/align.min.js
+//= require plugins/char_counter.min.js
+//= require plugins/code_beautifier.min.js
+//= require plugins/code_view.min.js
+//= require plugins/colors.min.js
+//= require plugins/emoticons.min.js
+//= require plugins/entities.min.js
+//= require plugins/file.min.js
+//= require plugins/font_family.min.js
+//= require plugins/font_size.min.js
+//= require plugins/fullscreen.min.js
+//= require plugins/help.min.js
+//= require plugins/image.min.js
+//= require plugins/image_manager.min.js
+//= require plugins/inline_style.min.js
+//= require plugins/line_breaker.min.js
+//= require plugins/link.min.js
+//= require plugins/lists.min.js
+//= require plugins/paragraph_format.min.js
+//= require plugins/paragraph_style.min.js
+//= require plugins/print.min.js
+//= require plugins/quick_insert.min.js
+//= require plugins/quote.min.js
+//= require plugins/save.min.js
+//= require plugins/table.min.js
+//= require plugins/special_characters.min.js
+//= require plugins/url.min.js
+//= require plugins/video.min.js
+
+//= require third_party/embedly.min.js
+//= require third_party/image_aviary.min.js
+//= require third_party/spell_checker.min.js
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
-
-// $(function() {
-//   $('.directUpload').find("input:file").each(function(i, elem) {
-//     var fileInput    = $(elem);
-//     var form         = $(fileInput.parents('form:first'));
-//     var submitButton = form.find('input[type="submit"]');
-//     var progressBar  = $("<div class='bar'></div>");
-//     var barContainer = $("<div class='progress'></div>").append(progressBar);
-//     debugger
-//     fileInput.after(barContainer);
-//     fileInput.fileupload({
-//       fileInput:       fileInput,
-//       url:             form.data('url'),
-//       type:            'POST',
-//       autoUpload:       true,
-//       formData:         form.data('form-data'),
-//       paramName:        'file', // S3 does not like nested name fields i.e. name="user[avatar_url]"
-//       dataType:         'XML',  // S3 returns XML if success_action_status is set to 201
-//       replaceFileInput: false
-//     });
-//   });
-// });
