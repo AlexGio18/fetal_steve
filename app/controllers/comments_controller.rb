@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
       redirect_to tour_path(@comment.picture.gallery.tour_id)
     else
       @tour = @comment.picture.gallery.tour
-      redirect_to tour_path(@tour)
+      redirect_to picture_path(@comment.picture)
     end
   end
 

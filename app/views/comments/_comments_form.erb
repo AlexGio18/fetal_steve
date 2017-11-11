@@ -1,0 +1,19 @@
+<div class="col-xs-offset-1 col-xs-10">
+  <%= form_for [@picture, @comment], :html => { :class => 'form-horizontal', multipart: true } do |f| %>
+    <%= f.hidden_field :picture_id, :value => @picture.id %>
+    <div class="form-group">
+      <%= f.label :author, :class => 'control-label' %>
+      <%= f.text_field :author, :class => 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :description, :class => 'control-label' %>
+      <%= f.text_area :description, :class => 'form-control' %>
+    </div>
+    <%= recaptcha_tags %>
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  tours_path, :class => 'btn btn-warning' %>
+    </div>
+  <% end %>
+</div>
