@@ -35,6 +35,15 @@
       <%= f.label :scholarship, :class => 'control-label' %><br />
       <%= f.check_box :scholarship, :class => 'form-control' %><br />
     </div>
+
+    <% if has_pictures?(@tour) %>
+      <div class="form-group">
+        <%= f.label :cover, :class => 'control-label' %><br />
+        <span class="form-caption">You can change the Tour Cover Thumbnail here: (Picture # in the Tour)</span><br/>
+        <%= f.number_field :cover, :class => 'form-control' %><br />
+      </div>
+    <% end %>
+
     <div class="form-actions">
       <%= f.submit nil, :class => 'btn btn-primary' %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

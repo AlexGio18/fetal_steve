@@ -33,6 +33,21 @@
   max-width: 300px;
 }
 
+.thumbnail .fa-circle {
+  color: #81ba4e;
+  position: absolute;
+  right: 5px;
+}
+
+.thumbnail .image-number {
+  color: #fff;
+  position: absolute;
+  right: 5px;
+  font-size: 0.4em;
+  top: 8px;
+  font-family: 'Roboto', sans-serif !important;
+}
+
 .thumbnail-modal {
   padding: 10px 0px;
 }

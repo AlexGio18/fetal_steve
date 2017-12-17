@@ -25,7 +25,11 @@
         <% end %>
         <% if tour.galleries.length > 0 %>
           <div class="thumbnail-crop">
-            <%= image_tag tour.galleries[0].pictures[0].image.url(:thumb) %>
+            <% if tour.cover == nil %>
+              <%= image_tag tour.galleries[0].pictures[0].image.url(:thumb) %>
+            <% else %>
+              <%= image_tag get_cover(tour) %>
+            <% end %>
           </div>
         <% end %>
       </div>
