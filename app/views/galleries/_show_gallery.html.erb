@@ -18,7 +18,7 @@
         <div class="thumbnail-modal" onclick="showModal('<%= pic.id %>');">
           <div class="thumbnail" style="margin: auto;">
             <div class="thumbnail-crop">
-              <i class="fa fa-circle fa-2x" aria-hidden="true"><span class="image-number"><%= find_picture_number(@tour, pic.id)%></span></i>
+              <div class="number-circle"><span class="image-number"><%= find_picture_number(@tour, pic.id)%></span></div>
               <%= image_tag pic.image.url(:thumb) %>
             </div>
           </div>
