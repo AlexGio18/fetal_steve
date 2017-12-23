@@ -45,7 +45,22 @@
   <div class="container-fluid body-wrapper">
     <% flash.each do |k, v| %>
       <div class="alert alert-<%= k %>">
-        <%= v %>
+        <ol>
+          <% if v.is_a?(Hash) %>
+            <% v.each do |key, errors| %>
+              <li>
+                  <strong><%= key %></strong>
+                  <ul>
+                    <% errors.each do |message| %>
+                      <li><%= message %></li>
+                    <% end %>
+                  </ul>
+              </li>
+            <% end %>
+          <% else %>
+            <li><%= v %></li>
+          <% end %>
+        </ul>
       </div>
     <% end %>
     <%= yield %>

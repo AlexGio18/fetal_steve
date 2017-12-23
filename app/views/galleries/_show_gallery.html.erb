@@ -48,9 +48,13 @@
                 <ul class="list-group">
                   <% pic.comments.each do |comment| %>
                     <li class="list-group-item"> 
-                        <%= comment.created_at %>
-                        Author: <%= comment.author %> <br />
-                        Body: <%= comment.description %>
+                        <div class="comment-top">
+                          <span class="author-name"><%= comment.author %></span>
+                          <span class="comment-posted"><%= formatDate(comment.created_at) %></span>
+                        </div>
+                        <div class="comment-bottom">
+                          <span><%= comment.description %></span>
+                        </div>
                     </li>
                   <% end %>
                 </ul>

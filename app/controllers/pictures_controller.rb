@@ -2,6 +2,9 @@ class PicturesController < ApplicationController
    # before_action :set_s3_direct_post, only: [:new, :edit, :create, :update, :destroy]
   # GET /pictures
   # GET /pictures.json
+
+  include CommentHelper
+  
   def index
 
     @gallery = Gallery.find(params[:gallery_id])
