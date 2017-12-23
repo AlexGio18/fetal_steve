@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     @comment.picture_id = params[:picture_id]
 
     if verify_recaptcha(model: @comment) && @comment.save
-      flash[:success] = "Created comment on on #{@comment.picture.image_file_name}."
+      flash[:success] = "Created comment on #{@comment.picture.image_file_name}."
       redirect_to tour_path(@comment.picture.gallery.tour_id)
     else
       @tour = @comment.picture.gallery.tour
