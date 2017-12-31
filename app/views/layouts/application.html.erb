@@ -29,6 +29,7 @@
             </ul>
           </li>
           <li class="nav-menu-item"><%= link_to "Placenta", posts_path %></li>
+          <li class="nav-menu-item"><%= link_to "Guestbook", guest_comments_path %></li>
           <!-- <li class="nav-menu-item"><a href="http://www.fetalsteve.com/cgi-bin/store/cpshop.cgi">Store</a></li> -->
         </ul>
         <ul class="nav navbar-nav navbar-right">
@@ -64,9 +65,6 @@
       </div>
     <% end %>
     <%= yield %>
-  </div>
-  <div class="container-fluid">
-  <%= render '/posts/placentanav' %>
   </div>
   </body>
 </html>

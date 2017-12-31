@@ -11,7 +11,6 @@ class CommentsController < ApplicationController
       redirect_to tour_path(@comment.picture.gallery.tour_id)
     else
       @tour = @comment.picture.gallery.tour
-      binding.pry
       flash[:danger] = @comment.errors.messages
 
       redirect_to picture_path(@comment.picture)
