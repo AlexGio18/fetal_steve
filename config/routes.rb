@@ -7,9 +7,12 @@ Rails.application.routes.draw do
   get 'placenta', :to => 'posts#index'
   get 'placenta/scholarships', :to => 'posts#show'
   get 'placenta/odds_and_ends', :to => 'fetalsteves#show'
+  get 'guestbook', :to => 'guest_comments#index'
   resources :tours do
     resources :galleries
   end
+
+  resources :guest_comments
   
   resources :posts
   resources :pictures do
