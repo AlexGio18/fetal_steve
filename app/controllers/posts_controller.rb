@@ -39,6 +39,10 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    @post = Post.find(params[:id])
+    flash[:warning] = "#{@post.title} is Removed!"
+    @post.destroy
+    redirect_to placenta_path
   end
 
   private
