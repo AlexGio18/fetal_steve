@@ -73,18 +73,11 @@
 <script>
   function showModal(modal_id) {
     $('#'+modal_id).modal("show");
-    setTimeout(function() {
-      createRecaptcha(modal_id);
-    }, 100)
-  }
-
-  function createRecaptcha(id) {
-    $('#recaptcha-container-'+id).html('<div class="g-recaptcha " data-sitekey="6LfaLS8UAAAAAMw-lSIX0_EjtXZKTm-qWhpKGbDN"></div>')
   }
 
   function openNextModal(current_id, next_id) {
-    $('#'+current_id).modal('hide');
-    $('#'+next_id).modal('show');
+    $('#'+current_id).hide();
+    $('#'+next_id).show();
 
     if ((($("#"+next_id).data('bs.modal') || {}).isShown) === true) {
       $(document.body).css('position', 'fixed');
