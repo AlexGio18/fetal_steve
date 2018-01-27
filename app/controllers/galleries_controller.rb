@@ -11,6 +11,11 @@ class GalleriesController < ApplicationController
     @tour = Tour.find(params[:tour_id])
     @gallery = Gallery.find(params[:id])
     @pictures = @gallery.pictures
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @gallery }
+    end
   end
 
   def new

@@ -9,6 +9,10 @@ class ToursController < ApplicationController
   def show
     @tour = Tour.find(params[:id])
     @comment = Comment.new
+    respond_to do |format|
+      format.html
+      format.json { render json: @gallery }
+    end
   end
 
   def new
