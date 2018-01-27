@@ -26,14 +26,16 @@
 </div>
 
 <div class="col-xs-offset-1 col-xs-10">
-  <%= form_for(@guest_comment, html:{ multipart: true }) do |f| %>
+  <%= form_for(@guest_comment, html:{ :id => "form", multipart: true }) do |f| %>
     <div class="form-group">
       <%= f.label :author, :class => 'control-label' %>
       <%= f.text_field :author, :class => 'form-control' %>
     </div>
     <div class="form-group">
       <%= f.label :description, :class => 'control-label' %>
-      <%= f.cktext_area :description, :class => "form-control"%>
+      <%= f.text_area :description, :id=>'commentDesc', :class => 'hidden-text-area' %>
+      <div id="quill-editor">
+      </div>
     </div>
     <%= recaptcha_tags %>
     <div class="form-actions">
@@ -41,3 +43,16 @@
     </div>
   <% end %>
 </div>
+
+<script>
+  var quill = new Quill('#quill-editor', {
+    theme: 'snow'
+  });
+
+  var form = document.querySelector('#form');
+
+  form.onsubmit = function() {
+    var postContentInput = document.querySelector("#commentDesc");
+    postContentInput.value = quill.root.innerHTML;
+  }
+</script>

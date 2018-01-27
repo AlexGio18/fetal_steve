@@ -47,8 +47,7 @@ gem "less-rails"
 gem 'dotenv-rails'
 gem 'aws-sdk', '~> 2.3'
 gem "recaptcha", require: "recaptcha/rails"
-
-gem 'ckeditor', '4.1.3'
+# gem 'ckeditor', '4.1.3'
 
 gem "font-awesome-rails"
 # gem 'jcrop-rails-v2'
