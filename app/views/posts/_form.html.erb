@@ -19,7 +19,7 @@
     <div class="col-xs-12">
       <div class="form-group">
         <%= f.label :description, :class => 'control-label' %>
-        <%= f.text_area :description, :class => "form-control", id: "wysiwyg" %>
+        <%= f.cktext_area :description, :class => "form-control" %>
       </div>
     </div>
     <div class="col-xs-12">
@@ -30,12 +30,3 @@
     <% end %>
 
 </div>
-
-<script>
-    $('#wysiwyg').froalaEditor({
-      inlineMode: false,
-      toolbarButtons: ['bold', 'italic', 'underline', 'strikeThrough', 'emoticons', '|', 'paragraphFormat', 'align', 'undo', 'redo', 'html'],
-      emoticonsStep: 8,
-      heightMin: '200px'
-    })
-</script>
