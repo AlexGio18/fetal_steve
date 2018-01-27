@@ -33,11 +33,10 @@
           <!-- <li class="nav-menu-item"><a href="http://www.fetalsteve.com/cgi-bin/store/cpshop.cgi">Store</a></li> -->
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li class="nav-menu-item"><% if user_signed_in? %>
+          <li class="nav-menu-item">
+            <% if user_signed_in? %>
               <%= link_to("Log Out", destroy_user_session_path, :method => :delete) %>
-              <% else %>
-              <%= link_to "Sign In", new_user_session_path %>
-              <% end %>
+            <% end %>
           </li>
         </ul>
       </div>
