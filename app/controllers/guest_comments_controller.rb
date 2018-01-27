@@ -20,6 +20,13 @@ def create
   end
 end
 
+ def destroy
+    comment = GuestComment.find(params[:id])
+    flash[:warning] = "Comment by #{comment.author} is Removed!"
+    comment.destroy
+    redirect_to guest_comments_path
+  end
+
 private
   def comment_params
     params.require(:guest_comment).permit(:author, :description)

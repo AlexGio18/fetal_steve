@@ -12,11 +12,12 @@
           <div class="comment-top">
             <span class="author-name"><%= comment.author %></span>
             <span class="comment-posted"><%= formatDate(comment.created_at) %></span>
+            <% if current_user %>
+              <%= link_to "Delete", guest_comment_path(comment), :class=> ["fetal-button", "delete-button", "btn-pill", "pull-right"], method: :delete, data: {confirm: "Really delete Comment by #{comment.author}?"} %>
+            <% end %>
           </div>
           <div class="comment-bottom">
-              <div class="fr-view">
-                <%= raw comment.description %>
-              </div>
+            <%= raw comment.description %>
           </div>
         </li>
       <% end %>

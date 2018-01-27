@@ -20,7 +20,12 @@ class CommentsController < ApplicationController
   def update
   end
 
-  def delete
+  def destroy
+    comment = Comment.find(params[:id])
+    picture = comment.picture
+    flash[:warning] = "Comment by #{comment.author} is Removed!"
+    comment.destroy
+    redirect_to picture_path(picture)
   end
 
   private
