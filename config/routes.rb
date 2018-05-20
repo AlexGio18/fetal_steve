@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'placenta/scholarships', :to => 'posts#show'
   get 'placenta/odds_and_ends', :to => 'fetalsteves#show'
   get 'guestbook', :to => 'guest_comments#index'
-
+  get 'comments', :to => 'comments#index'
   devise_scope :user do
     get 'fetal_login', to: 'devise/sessions#new'
   end

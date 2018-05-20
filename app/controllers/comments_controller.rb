@@ -1,6 +1,11 @@
 class CommentsController < ApplicationController
-
+  skip_before_action :verify_authenticity_token
+  
   include CommentHelper
+
+  def index
+    @comments = Comment.order(created_at: :desc).all
+  end
   
   def create
     @comment = Comment.new(comment_params)
