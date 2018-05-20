@@ -1,0 +1,22 @@
+<div class="col-xs-12">
+  <h1 class="text-center"> Picture Comments </h1>
+</div>
+
+<div class="col-xs-offset-1 col-xs-10 comment-well">
+  <div class="row">
+    <ul class="list-group">
+      <% @comments.each do |comment| %>
+        <li class="list-group-item"> 
+          <div class="comment-top">
+            <span class="author-name"><%= comment.author %></span>
+            <span class="comment-posted"><%= formatDate(comment.created_at) %></span>
+            <%= link_to "View Picture", picture_path(comment.picture.id), :class => ["fetal-button", "info-button", "btn-pill", "pull-right"] %>
+          </div>
+          <div class="comment-bottom">
+            <%= raw comment.description %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
