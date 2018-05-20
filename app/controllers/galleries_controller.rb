@@ -1,5 +1,4 @@
 class GalleriesController < ApplicationController
-  # before_action :set_s3_direct_post, only: [:new, :edit, :create, :update, :destroy]
 
   include GalleryHelper
   include CommentHelper
